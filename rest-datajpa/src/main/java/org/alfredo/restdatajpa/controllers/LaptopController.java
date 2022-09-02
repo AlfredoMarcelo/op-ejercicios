@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 public class LaptopController {
@@ -31,7 +32,7 @@ public class LaptopController {
     }
 
     @GetMapping("/laptops/{id}")
-    public ResponseEntity<Object>  getById(@PathVariable Long id){
+    public ResponseEntity<Object>  getById(@PathVariable UUID id){
         Optional<Laptop> optionalLaptop = laptopService.findById(id);
         if (!optionalLaptop.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Laptop solicitado no existe!");

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class LaptopServiceImp implements LaptopService {
@@ -29,7 +30,7 @@ public class LaptopServiceImp implements LaptopService {
     }
 
     @Override
-    public Optional<Laptop> findById(Long id) {
+    public Optional<Laptop> findById(UUID id) {
         return laptopRepository.findById(id);
     }
 

@@ -4,12 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
-public class Laptop {
+public class Laptop  implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String marca;
     private String sistemaOperativo;
     private String procesador;
@@ -22,7 +26,7 @@ public class Laptop {
     public Laptop() {
     }
 
-    public Laptop(long id, String marca, String sistemaOperativo, String procesador, String ram, int pulgadas, int valor, boolean bluetooth, boolean hdmi) {
+    public Laptop(UUID id, String marca, String sistemaOperativo, String procesador, String ram, int pulgadas, int valor, boolean bluetooth, boolean hdmi) {
         this.id = id;
         this.marca = marca;
         this.sistemaOperativo = sistemaOperativo;
@@ -44,11 +48,11 @@ public class Laptop {
         this.hdmi = hdmi;
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
