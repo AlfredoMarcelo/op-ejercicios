@@ -30,7 +30,7 @@ public class LaptopServiceImp implements LaptopService {
     }
 
     @Override
-    public Optional<Laptop> findById(UUID id) {
+    public Optional<Laptop> findById(Long id) {
         return laptopRepository.findById(id);
     }
 

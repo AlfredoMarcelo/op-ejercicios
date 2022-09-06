@@ -9,7 +9,7 @@ import java.util.UUID;
 public interface LaptopService{
     Laptop addLaptop(Laptop laptop);
     List<Laptop> findAllLaptops();
-    Optional<Laptop> findById(UUID id);
+    Optional<Laptop> findById(Long id);
     Long deleteLaptop(Long id);
     Laptop updateLaptop(Laptop laptop);
 

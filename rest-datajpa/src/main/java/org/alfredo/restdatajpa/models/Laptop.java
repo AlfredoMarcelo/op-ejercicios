@@ -8,12 +8,12 @@ import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
-public class Laptop  implements Serializable {
+public class Laptop {
 
-    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
     private String marca;
     private String sistemaOperativo;
     private String procesador;
@@ -26,7 +26,7 @@ public class Laptop  implements Serializable {
     public Laptop() {
     }
 
-    public Laptop(UUID id, String marca, String sistemaOperativo, String procesador, String ram, int pulgadas, int valor, boolean bluetooth, boolean hdmi) {
+    public Laptop(Long id, String marca, String sistemaOperativo, String procesador, String ram, int pulgadas, int valor, boolean bluetooth, boolean hdmi) {
         this.id = id;
         this.marca = marca;
         this.sistemaOperativo = sistemaOperativo;
@@ -48,11 +48,11 @@ public class Laptop  implements Serializable {
         this.hdmi = hdmi;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
